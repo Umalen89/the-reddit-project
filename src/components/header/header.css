@@ -1,0 +1,12 @@
+#heading {
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    height: fit-content;
+    align-self: center;
+    margin-right: 1em;
+    background-color: #ed490a;
+    color: white;
+}
