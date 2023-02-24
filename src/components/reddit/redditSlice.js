@@ -22,11 +22,14 @@ export const fetchInfo = createAsyncThunk('reddit/popularInfo', async () => {
 
   const finalArray = data.map(obj => ({
       id: obj.data.name,
-      title: obj.data.title, 
+      title: obj.data.title,
+      url: obj.data.permalink, 
       thumbnail: obj.data.thumbnail,
+      subreddit: obj.data.subreddit,
       subreddit_name_prefixed: obj.data.subreddit_name_prefixed,
       ups: obj.data.ups,
-      author: obj.data.author
+      author: obj.data.author,
+      numcomments: obj.data.num_comments
   }))
   return finalArray
 })

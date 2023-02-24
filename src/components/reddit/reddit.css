@@ -1,7 +1,8 @@
 /* Styles for a reddit post */
 
 .redditItem {
-    width: 20em
+    width: 30em;
+    padding: 0.7em
 }
 
 .redditTitle {
@@ -18,13 +19,29 @@
     display: block;
 }
 
+.redditFooter, .commentLink {
+    color: grey;
+}
+
+.commentLink {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.commentLink:hover {
+    background-color: grey;
+    color: white;
+}
+
+
+
 /*Reddit Container styles*/
 #redditItems {
     width: 80%;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: azure;
 }
 
