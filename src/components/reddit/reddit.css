@@ -5,6 +5,20 @@
     padding: 0.7em
 }
 
+.subreddit, .subredditAuthor {
+    text-decoration: none;
+}
+
+.subreddit {
+    color:black;
+    font-weight: bold;
+}
+
+.subredditAuthor {
+    color: rgb(255, 77, 0);
+    font-weight: bold;
+}
+
 .redditTitle {
     background-color: #ddc8c0;
     text-align: center;
@@ -31,6 +45,7 @@
 .commentLink:hover {
     background-color: grey;
     color: white;
+    border-radius:10%;
 }
 
 

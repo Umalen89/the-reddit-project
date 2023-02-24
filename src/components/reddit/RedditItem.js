@@ -10,8 +10,8 @@ export default function RedditItem({ obj }) {
     return (
         <div className="redditItem">
             <div>
-                <p>Posted on <a target='_blank' href={subredditLink} rel='noreferrer'>{obj.subreddit_name_prefixed}</a> by 
-                    <a target='_blank' href={authorLink} rel='noreferrer'> u/{obj.author}</a></p>
+                <p>Posted on <a className='subreddit' target='_blank' href={subredditLink} rel='noreferrer'>{obj.subreddit_name_prefixed}</a> by 
+                    <a className='subredditAuthor' target='_blank' href={authorLink} rel='noreferrer'> u/{obj.author}</a></p>
             </div>
             <div className = "redditTitle">
                 <h2>{obj.title}</h2>
