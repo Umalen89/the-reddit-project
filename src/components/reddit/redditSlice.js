@@ -16,20 +16,17 @@ export const fetchInfo = createAsyncThunk('reddit/popularInfo', async () => {
   const response = await fetch(url);
   const jsonResponse = await response.json();
   const data = jsonResponse.data.children
-
   console.log(data);
-  
+
   if(!data.length) return [];
 
   const finalArray = data.map(obj => ({
       id: obj.data.name,
-      subreddit: obj.data.subreddit,
       title: obj.data.title, 
       thumbnail: obj.data.thumbnail,
       subreddit_name_prefixed: obj.data.subreddit_name_prefixed,
-      subreddit_type: obj.data.subreddit_type,
       ups: obj.data.ups,
-      selftext: obj.data.selftext
+      author: obj.data.author
   }))
   return finalArray
 })
@@ -49,7 +46,6 @@ const redditSlice = createSlice({
       [fetchInfo.fulfilled]: (state, action) => {
         state.status = 'success'
         // Add any fetched posts to the array
-        window.alert('it works!!')
         state.body = action.payload
        // if (state.startSub) {state.startSub = false} else {state.startSub = true};
       },

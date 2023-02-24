@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchInfo, redditStatus, redditError } from "./redditSlice";
 import { RedditItems }  from "./RedditItems";
 
+import './reddit.css';
 //import './RedditContainer.css';
 
 function Reddit() {
@@ -23,7 +24,7 @@ function Reddit() {
             </div>
         )
     } else if ( status === 'success') {
-       content = ( <div>
+       content = ( <div id='redditItems'>
         <RedditItems />
     </div>)
     } else if ( status === 'failed') {

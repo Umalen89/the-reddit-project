@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+import RedditItem, { redditItem } from './RedditItem';
 import { redditState } from './redditSlice';
 
 export const RedditItems = () => {
@@ -8,12 +9,7 @@ export const RedditItems = () => {
 
     const redditItems = reddits.length ? reddits.map ((obj) => {
         return (
-            <div>
-                <h2>{obj.title}</h2>
-                {(obj.thumbnail && obj.thumbnail[0] === 'h') ? 
-                    <img src={obj.thumbnail} alt="post"/> :
-                    <p>image not found</p>}
-            </div>
+          <RedditItem key={obj.id} obj={obj}/>
         );
     }) : <div><p>no content found</p></div>;
 
